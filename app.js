@@ -7,18 +7,6 @@ const spawnChrome = async ()=> {
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080});
     return {browser,page}
-    for (let index = 0; index < hotels.length; index++) {
-        await page.goto(hotels[index]);
-        await delay(1000)
-        await page.click('li[data-page="contact"]')
-        await page.type('.block__item input#f_name',"Katharina Pilz",{delay:50})
-        await page.type('.block__item input#f_email',"kathi.pilz@hotmail.com",{delay:55})
-        await page.select('select#f_subject', '9')
-        await page.type('.block__item #f_message',"Hi, do you have a private room or studio for a couple available for the dates: 30th of September until 31st of October. What would be the price? Looking forward to hearing from you. Best, Katharina P.S. Do you also offer long stay? If yes, could you send us the offer for stay between 30th of September and 31st of March 22.",{delay:15})
-        await page.click("input.form__submit")
-        await delay(1000)
-        console.log("\t- success - ",hotels[index]);
-    }
 }
 
 const login = async ({...data}) =>{
